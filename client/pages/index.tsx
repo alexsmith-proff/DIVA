@@ -19,7 +19,8 @@ function Index() {
         <ServiceSection />
         <ReviewsSection />
         <PartnersSection />
-        <FeedBackSection />        
+        <FeedBackSection />
+
       </MainLayout>
     </div>
   )
