@@ -30,6 +30,11 @@
 @media screen and (max-width: 380px) {
     .btn{
         font-size: 14px;
-        padding: 5px 7px;
+        padding: 0;
+        width: 142px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }        
 }
