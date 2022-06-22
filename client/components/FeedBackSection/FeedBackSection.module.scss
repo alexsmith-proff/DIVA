@@ -1,0 +1,18 @@
+.feedbackSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+.text{
+    font-size: 40px;
+    font-weight: bold;
+}
+.btnList{
+    display: flex;
+    flex-direction: row;
+}
+.firstBtn{
+    margin-right: 30px;
+}
