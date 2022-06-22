@@ -16,3 +16,62 @@
 .firstBtn{
     margin-right: 30px;
 }
+
+@media screen and (max-width: 1024px) {
+    .feedbackSection{
+        padding: 50px 10px;
+    }
+    .text{
+        font-size: 34px;
+    }
+    .firstBtn{
+        margin-right: 30px;
+    }        
+}
+@media screen and (max-width: 1024px) {
+    .text{
+        font-size: 30px;
+    }
+    .firstBtn{
+        margin-right: 30px;
+    }        
+}
+@media screen and (max-width: 768px) {
+    .feedbackSection{
+        display: flex;
+        flex-direction: column;
+    }
+    .text{
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+    .firstBtn{
+        margin-right: 30px;
+    }        
+}
+@media screen and (max-width: 480px) {
+    .text{
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    .firstBtn{
+        margin-right: 10px;
+    }        
+}
+@media screen and (max-width: 380px) {
+    .feedbackSection{
+        padding: 30px 10px;
+    }
+    .text{
+        font-size: 26px;
+    }
+    .btnList{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }    
+    .firstBtn{
+        margin-right: 0px;
+        margin-bottom: 15px;
+    }   
+}

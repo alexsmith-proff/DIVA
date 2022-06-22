@@ -7,9 +7,11 @@ import s from './Btn.module.scss'
 type BtnProps = {
     children: React.ReactNode,
     typeBtn: TypeBtn,
+    link?: string,
+    setActive?: (isActive: boolean) => void
 }
 
-const Btn: React.FC<BtnProps> = ({ children, typeBtn }) => {
+const Btn: React.FC<BtnProps> = ({ children, typeBtn, link, setActive }) => {
     return (
         <>
             {
@@ -21,8 +23,16 @@ const Btn: React.FC<BtnProps> = ({ children, typeBtn }) => {
                 </Link>
             }
             {
-                typeBtn == TypeBtn.ToFeedbackPopup &&
-                <a className={s.btn}>
+                typeBtn == TypeBtn.ToLink &&
+                <Link href={link}>
+                    <a className={s.btn}>
+                        {children}
+                    </a>
+                </Link>
+            }
+            {
+                typeBtn == TypeBtn.ToFeedBackPopup &&
+                <a className={s.btn} onClick={() => setActive(true)} >
                     {children}
                 </a>
             }

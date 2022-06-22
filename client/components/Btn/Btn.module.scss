@@ -15,3 +15,21 @@
         border: 2px  solid transparent
     }
 }
+@media screen and (max-width: 1024px) {
+    .btn{
+        font-size: 18px;
+        padding: 10px 20px;
+    }        
+}
+@media screen and (max-width: 480px) {
+    .btn{
+        font-size: 16px;
+        padding: 5px 7px;
+    }        
+}
+@media screen and (max-width: 380px) {
+    .btn{
+        font-size: 14px;
+        padding: 5px 7px;
+    }        
+}
