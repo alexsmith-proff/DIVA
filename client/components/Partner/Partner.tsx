@@ -2,11 +2,14 @@ import React from 'react'
 
 import s from './Partner.module.scss'
 
-type PartnerProps = {}
+type PartnerProps = {
+    path: string
+}
 
-const Partner: React.FC<PartnerProps> = () => {
+const Partner: React.FC<PartnerProps> = ({path}) => {
     return (
-        <div>
+        <div className={s.partner}>
+            <img className={s.partnerImg} src={path} alt="partner-img" />
             
         </div>
     );

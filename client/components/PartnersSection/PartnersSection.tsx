@@ -1,4 +1,5 @@
 import React from 'react'
+import PartnersList from '../PartnersList/PartnersList';
 import SectionTitle from '../SectionTitle/SectionTitle';
 
 import s from './PartnersSection.module.scss'
@@ -9,8 +10,12 @@ const PartnersSection: React.FC<PartnersSectionProps> = () => {
     return (
         <>
             <SectionTitle>
-                Услуги
+                наши партнеры
             </SectionTitle>
+            <div className="container">
+                <PartnersList />
+            </div>
+
         </>
     );
 };
