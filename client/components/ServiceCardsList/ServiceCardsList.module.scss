@@ -1,0 +1,14 @@
+.list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(337px, 1fr));
+    grid-gap: 50px;
+    justify-items: center;
+    padding: 80px 0;
+}
+@media screen and (max-width: 768px) {
+    .list{
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-gap: 50px;
+        padding: 50px 0 80px;
+    }
+}
