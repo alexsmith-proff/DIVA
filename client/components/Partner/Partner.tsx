@@ -10,7 +10,6 @@ const Partner: React.FC<PartnerProps> = ({path}) => {
     return (
         <div className={s.partner}>
             <img className={s.partnerImg} src={path} alt="partner-img" />
-            
         </div>
     );
 };
