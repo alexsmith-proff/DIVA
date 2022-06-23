@@ -8,7 +8,7 @@ type ServiceSectionProps = {}
 
 const ServiceSection: React.FC<ServiceSectionProps> = () => {
     return (
-        <div>
+        <div className={s.section}>
             <SectionTitle>
                 наши партнеры
             </SectionTitle>
