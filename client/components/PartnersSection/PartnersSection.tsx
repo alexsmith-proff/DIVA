@@ -9,7 +9,7 @@ type PartnersSectionProps = {}
 const PartnersSection: React.FC<PartnersSectionProps> = () => {
     return (
         <>
-            <SectionTitle>
+            <SectionTitle noBorder={true}>
                 наши партнеры
             </SectionTitle>
             <div className="container">
