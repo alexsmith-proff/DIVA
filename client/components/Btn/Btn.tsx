@@ -6,12 +6,13 @@ import s from './Btn.module.scss'
 
 type BtnProps = {
     children: React.ReactNode,
+    longText?: boolean,
     typeBtn: TypeBtn,
     link?: string,
     setActive?: (isActive: boolean) => void
 }
 
-const Btn: React.FC<BtnProps> = ({ children, typeBtn, link, setActive }) => {
+const Btn: React.FC<BtnProps> = ({ children, longText, typeBtn, link, setActive }) => {
     return (
         <>
             {
@@ -25,7 +26,7 @@ const Btn: React.FC<BtnProps> = ({ children, typeBtn, link, setActive }) => {
             {
                 typeBtn == TypeBtn.ToLink &&
                 <Link href={link}>
-                    <a className={s.btn}>
+                    <a className={longText ? (s.btn + ' ' + s.longText) : s.btn}>
                         {children}
                     </a>
                 </Link>
