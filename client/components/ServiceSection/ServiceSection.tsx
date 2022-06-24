@@ -10,7 +10,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = () => {
     return (
         <div className={s.section}>
             <SectionTitle>
-                наши партнеры
+                услуги
             </SectionTitle>
             <div className="container">
                 <ServiceCardsList />
