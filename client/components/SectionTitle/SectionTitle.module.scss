@@ -1,12 +1,22 @@
-.sectionTitle {
+.sectionTitle{
+    padding-top: 35px;
+}
+.title {
     display: flex;
     justify-content: center;
     align-items: center;
+    // margin-top: 35px;
     padding: 15px 0 45px 0;
     &.border{
         border-top: 1px solid #696969;
         border-bottom: 1px solid #696969;        
-    }    
+    } 
+    &.white{
+        background-color: #fff;
+    }   
+    &.black{
+        background-color: rgba(0, 0, 0, .23);
+    }
 }
 .text {
     font-size: 44px;
@@ -24,7 +34,7 @@
     }
 }
 @media screen and (max-width: 1024px) {
-    .sectionTitle {
+    .title {
         padding: 15px 0 45px 0;
     }
     .text {
@@ -32,7 +42,7 @@
     }
 }
 @media screen and (max-width: 480px) {
-    .sectionTitle {
+    .title {
         padding: 15px 0 45px 0;
     }
     .text {
@@ -44,7 +54,7 @@
     }
 }
 @media screen and (max-width: 480px) {
-    .sectionTitle {
+    .title {
         padding: 10px 0 35px 0;
     }
     .text {

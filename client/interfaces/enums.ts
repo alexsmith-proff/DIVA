@@ -3,3 +3,7 @@ export enum TypeBtn {
     ToFeedBackPopup, // Открыть FeedbackPopup
     ToLink,      //Перейти по ссылке
 }
+export enum TypeColor {
+    white,
+    black
+}
