@@ -12,7 +12,7 @@ type SectionTitleProps = {
 const SectionTitle: React.FC<SectionTitleProps> = ({ children, backgroundColor, noBorder }) => {
     return (
         <div className={s.sectionTitle}>
-            <div className={(noBorder ? s.title : (s.title + ' ' + s.border)) + (backgroundColor == TypeColor.white ? (' ' + s.white) : '')}>
+            <div className={(noBorder ? s.title : (s.title + ' ' + s.border)) + (backgroundColor == TypeColor.white ? (' ' + s.white) : '') + (backgroundColor == TypeColor.black ? (' ' + s.black) : '')}>
                 <div className={s.text}>
                     {children}
                 </div>

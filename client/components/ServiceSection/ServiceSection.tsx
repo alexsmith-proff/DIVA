@@ -1,4 +1,5 @@
 import React from 'react'
+import { TypeColor } from '../../interfaces/enums';
 import SectionTitle from '../SectionTitle/SectionTitle';
 import ServiceCardsList from '../ServiceCardsList/ServiceCardsList';
 
@@ -9,7 +10,7 @@ type ServiceSectionProps = {}
 const ServiceSection: React.FC<ServiceSectionProps> = () => {
     return (
         <div className={s.section}>
-            <SectionTitle>
+            <SectionTitle backgroundColor={TypeColor.black}>
                 услуги
             </SectionTitle>
             <div className="container">
