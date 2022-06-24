@@ -10,7 +10,7 @@ type ServiceSectionProps = {}
 const ServiceSection: React.FC<ServiceSectionProps> = () => {
     return (
         <div className={s.section}>
-            <SectionTitle backgroundColor={TypeColor.black}>
+            <SectionTitle backgroundColor={TypeColor.white}>
                 услуги
             </SectionTitle>
             <div className="container">
