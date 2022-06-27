@@ -3,7 +3,9 @@
     justify-content: center;
     background-color: #000;
     height: 55px;
-    margin-bottom: 20px;
+    position: sticky;
+    top: 0px;
+    z-index: 99;
 }
 .wrap {
     display: flex;
@@ -15,6 +17,7 @@
     display: flex;
     align-items: center;
     width: 250px;
+    cursor: pointer;
 }
 .item:first-child{
     width: 260px;
@@ -43,6 +46,11 @@
         transition: .5s;
     }
 }
+// @media screen and (min-width: 1900px) {
+//     .topnav {
+//         // margin-bottom: 40px;
+//     }
+// }
 
 @media screen and (max-width: 768px) {
     .wrap {

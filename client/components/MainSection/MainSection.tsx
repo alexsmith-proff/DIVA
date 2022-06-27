@@ -10,7 +10,6 @@ type MainSectionProps = {}
 const MainSection: React.FC<MainSectionProps> = () => {
     return (
         <div className={s.section}>
-            <TopNav />
             <div className={s.nav}>
                 <div className="container">
                     <div className={s.navWrap}>

@@ -3,13 +3,15 @@
     background-size: cover 50px;
     background-position: center -140px;
     height: 1079px;
+    padding-top: 20px;
 }
 
 .nav {
     background: url("/img/nav_bg.png") no-repeat;
     background-size: cover;
     background-position: center;
-    height: 155px;
+    // height: 155px;
+    height: 164px;
 }
 
 .navWrap {
@@ -19,7 +21,8 @@
 }
 .circle {
     width: 155px;
-    height: 155px;
+    // height: 155px;
+    height: 164px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,6 +75,20 @@
     text-align: center;
     padding-top: 65px;
     margin-bottom: 275px;
+}
+@media screen and (min-width: 2210px) {
+    .section {
+        background-size: cover;
+        background-position: 0 0px;
+        height: 1179px;
+    }    
+}
+@media screen and (min-width: 1900px) {
+    .section {
+        background-size: cover;
+        background-position: 0 -220px;
+        height: 980px;
+    }    
 }
 @media screen and (max-width: 1200px) {
     .titleText{
