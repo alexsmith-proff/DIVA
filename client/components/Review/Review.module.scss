@@ -1,0 +1,40 @@
+.review {
+    background-color: #fff;
+    width: 325px;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 20px;
+    line-height: 26px;
+    border: 1px solid #000;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 3s;
+    &:after {
+        content: "";
+        width: 0;
+        height: 0;
+    }
+    &.left:after {
+        border-top: 12px solid transparent;
+        border-right: 24px solid #fff;
+        border-bottom: 12px solid transparent;
+        position: absolute;
+        left: -20px;
+    }
+    &.right:after {
+        border-top: 12px solid transparent;
+        border-left: 24px solid #fff;
+        border-bottom: 12px solid transparent;
+        position: absolute;
+        right: -20px;
+    }
+    &.top:after {
+        top: 38px;
+    }
+    &.bottom:after {
+        bottom: 38px;
+    }
+    &.active {
+        opacity: 1;
+    }
+}
