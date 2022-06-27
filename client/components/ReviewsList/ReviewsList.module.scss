@@ -1,0 +1,30 @@
+.desktop{
+    display: block;
+}
+
+.mobile{
+    display: none;
+}
+.wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+}
+
+@media screen and (max-width: 768px) {
+    .desktop{
+        display: none;
+    }
+    .mobile{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .wrap{
+        padding-top: 50px;
+    }
+}
+

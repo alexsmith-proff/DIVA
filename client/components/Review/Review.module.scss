@@ -38,3 +38,32 @@
         opacity: 1;
     }
 }
+.mobile{
+    background-color: #fff;
+    width: 60%;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 20px;
+    line-height: 26px;
+    border: 1px solid #000;
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width: 768px) {
+    .mobile{
+        width: 70%;
+        padding: 10px;
+        font-size: 18px;
+        line-height: 20px;
+        margin-bottom: 30px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .mobile{
+        width: 80%;
+        border-radius: 15px;
+        font-size: 16px;
+        line-height: 20px;
+        margin-bottom: 30px;
+    }
+}
