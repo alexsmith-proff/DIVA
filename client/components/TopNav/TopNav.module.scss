@@ -35,11 +35,13 @@
 .btn{
     font-size: 16px;
     line-height: 19px;
+    background-color: transparent;
     color: #fff;
     padding: 7px 23px;
     border: 2px solid #fff;
     border-radius: 50px;
     margin: 0 40px;
+    cursor: pointer;
     &:hover{
         background-color: #B4FFA8;
         color: #000;

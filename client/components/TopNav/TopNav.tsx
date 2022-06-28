@@ -1,13 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
+import FeedBackPopup from '../FeedBackPopup/FeedBackPopup';
 
 import s from './TopNav.module.scss'
+import { TypePopup } from '../../interfaces/enums';
 
 type TopNavProps = {}
 
-const TopNav: React.FC<TopNavProps> = () => {
+const TopNav: React.FC<TopNavProps> = () => {    
+    const [activeFeedBackPopup, setActiveFeedBackPopup] = useState<boolean>(false)
+
+    const onClickBtn = () => {
+        setActiveFeedBackPopup(true)
+    }
+
     return (
         <div className={s.topnav}>
+            <FeedBackPopup active={activeFeedBackPopup} setActive={setActiveFeedBackPopup} typePopup={TypePopup.FeedBack}/>
             <div className={s.wrap}>
                 <Link href={'tel:' + '+79631108553'}>
                     <div className={s.itemWrap}>
@@ -22,11 +31,9 @@ const TopNav: React.FC<TopNavProps> = () => {
                     </div>
                 </Link>
 
-                <Link href="/">
-                    <a className={s.btn}>
-                        Оставить заявку
-                    </a>
-                </Link>
+                <button className={s.btn} onClick={onClickBtn}>
+                    Оставить заявку
+                </button>
 
 
                 <Link href={'mailto:' + 'rieltagent.proff@mail.ru'}>
@@ -40,7 +47,7 @@ const TopNav: React.FC<TopNavProps> = () => {
                 </Link>
 
             </div>
-        </div >
+        </div>
 
     );
 };

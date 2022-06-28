@@ -8,11 +8,11 @@ import s from './FeedBackSection.module.scss'
 type FeedBackSectionProps = {}
 
 const FeedBackSection: React.FC<FeedBackSectionProps> = () => {
-    const [active, setActive] = useState<boolean>(false)
+    const [activeFeedBackPopup, setActiveFeedBackPopup] = useState<boolean>(false)
     return (
         <>
             {/* Добавляем FeedBackPopup чтобы не прокидывать пропсы из index */}
-            <FeedBackPopup active={active} setActive={setActive} typePopup={TypePopup.FeedBack}/>
+            <FeedBackPopup active={activeFeedBackPopup} setActive={setActiveFeedBackPopup} typePopup={TypePopup.FeedBack}/>
             <div className="container">
                 <section className={s.feedbackSection}>
                     <h3 className={s.text}>Остались вопросы ?</h3>
@@ -20,7 +20,7 @@ const FeedBackSection: React.FC<FeedBackSectionProps> = () => {
                         <div className={s.firstBtn}>
                             <Btn typeBtn={TypeBtn.ToCallPhone}>позвонить нам</Btn>
                         </div>
-                        <Btn typeBtn={TypeBtn.ToFeedBackPopup} setActive={setActive}>оставить заявку</Btn>
+                        <Btn typeBtn={TypeBtn.ToFeedBackPopup} setActive={setActiveFeedBackPopup}>оставить заявку</Btn>
                     </div>
                 </section>
             </div>

@@ -1,8 +1,9 @@
 .FeedBackPopup{
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.77);
+    background-color: rgba(0, 0, 0, 0.87);
     position: fixed;
+    z-index: 100;
     top: 0;
     left: 0;
     display: flex;
@@ -22,7 +23,7 @@
 }
 .content{
     padding: 20px;
-    border-radius: 10px;
+    // border-radius: 10px;
     background-color: #fff;
     transform: scale(0.5);
     transition: .2s;
@@ -30,10 +31,48 @@
 .content.active{
     transform: scale(1);
 }
+
+.contentWrap{
+    display: flex;
+    flex-direction: column;
+    padding: 50px 30px 30px; 
+    position: relative;   
+}
+.closeBtn{
+    font-size: 26px;
+    line-height: 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0px 5px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    &:hover{
+        background-color: rgb(180, 255, 168, 0.3);
+    }
+}
+.contentInput{
+    font-size: 18px;
+    padding: 5px 15px;
+    border: none;
+    border-bottom: 1px solid #000;
+
+    margin-bottom: 40px;
+}
+.policy{
+    font-size: 14px;
+    // font-weight: bold;
+    color: #000;
+    text-align: center;
+    // margin-top: -15px;
+    margin-bottom: 15px;
+}
+
+
 .btnWrap{
     display: flex;
     justify-content: center;
-    padding-top: 40px;
+    padding-top: 10px;
 }
 .btn{
     font-size: 18px;
@@ -43,10 +82,10 @@
     cursor: pointer;
     transition: .5s;
     &:hover{
-        background-color: #696969;
-        color: #fff;
+        background-color: #B4FFA8;
+        // color: #fff;
     } 
-    &.send{
-        margin-right: 30px;
-    }   
+    // &.send{
+    //     margin-right: 30px;
+    // }   
 }
