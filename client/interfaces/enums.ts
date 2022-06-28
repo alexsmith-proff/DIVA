@@ -26,3 +26,9 @@ export enum TypeTransaction {
     Sale, // Продажа
     Rent, // Аренда
 }
+
+// Тип Popup окна
+export enum TypePopup {
+    Dialog, // Продажа
+    FeedBack, // Аренда
+}

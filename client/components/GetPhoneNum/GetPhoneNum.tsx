@@ -16,6 +16,10 @@ const GetPhoneNum: React.FC<GetPhoneNumProps> = () => {
         setTelNumber(e.target.value)
     }
     const onClickBtn = () => {
+        // Отправка на сервер telNumber
+        telNumber
+        // Вызов диалогового окна
+        // <FeedBackPopup active={active} setActive={setActive} typePopup={TypePopup.FeedBack}/>
     }
     return (
         <div className={s.wrap}>

@@ -30,3 +30,23 @@
 .content.active{
     transform: scale(1);
 }
+.btnWrap{
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}
+.btn{
+    font-size: 18px;
+    padding: 5px 15px;
+    background-color: #fff;
+    border: 1px solid #000;
+    cursor: pointer;
+    transition: .5s;
+    &:hover{
+        background-color: #696969;
+        color: #fff;
+    } 
+    &.send{
+        margin-right: 30px;
+    }   
+}

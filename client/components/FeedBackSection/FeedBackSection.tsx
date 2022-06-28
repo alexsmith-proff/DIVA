@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { TypeBtn } from '../../interfaces/enums';
+import { TypeBtn, TypePopup } from '../../interfaces/enums';
 import Btn from '../Btn/Btn';
 import FeedBackPopup from '../FeedBackPopup/FeedBackPopup';
 
@@ -12,7 +12,7 @@ const FeedBackSection: React.FC<FeedBackSectionProps> = () => {
     return (
         <>
             {/* Добавляем FeedBackPopup чтобы не прокидывать пропсы из index */}
-            <FeedBackPopup active={active} setActive={setActive}/>
+            <FeedBackPopup active={active} setActive={setActive} typePopup={TypePopup.FeedBack}/>
             <div className="container">
                 <section className={s.feedbackSection}>
                     <h3 className={s.text}>Остались вопросы ?</h3>
