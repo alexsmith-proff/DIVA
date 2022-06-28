@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import validator from 'validator';
 import Link from 'next/link';
 import { TypePopup } from '../../interfaces/enums';
 import InputName from "react-input-mask";
@@ -15,6 +16,8 @@ type FeedBackPopupProps = {
 const FeedBackPopup: React.FC<FeedBackPopupProps> = ({ active, typePopup, setActive, children }) => {
     const [name, setName] = useState<string>('')
     const [telNumber, setTelNumber] = useState<string>('+7 (999) 999-99-99')
+    const [nameAlert, setNameAlert] = useState<boolean>(false)
+    const [telNumberAlert, setTelNumberAlert] = useState<boolean>(false)
     useEffect(() => {
         if (active) {
             document.body.style.overflow = "hidden"
@@ -35,12 +38,36 @@ const FeedBackPopup: React.FC<FeedBackPopupProps> = ({ active, typePopup, setAct
 
     const Send = () => {
         // Валидация полей ввода
-        // Отпрака данных на сервер
+        // Убираем '(', ')', '-' и пробелы. (+7 (963) 111-96-12 приводим к +79631119612)
+        const telNumberProcessed = telNumber.replace(/[\(\)\-\s]/g, '')
 
-        // Очистка полей ввода
-        setName('')
-        setTelNumber('+7 (999) 999-99-99')
-        setActive(false)
+        // Проверяем на пустоту имя
+        if (name == '') {
+            setNameAlert(true)
+        }else {
+            setNameAlert(false)
+        }
+        if (validator.isMobilePhone(telNumberProcessed, 'any') && (telNumberProcessed != '+79999999999')) {
+            setTelNumberAlert(false)
+            console.log('yes');
+            
+        }else{
+            setTelNumberAlert(true)
+            console.log('no');
+        }
+        // Проверяем Российский номер и номер не +79999999999
+        if ((validator.isMobilePhone(telNumberProcessed, 'any')) && (telNumberProcessed != '+79999999999')&&(name != '')) {
+            // Отправка на сервер telNumber
+
+            // Отпрака данных на сервер
+
+            // Очистка полей ввода
+            setName('')
+            setTelNumber('+7 (999) 999-99-99')
+            setActive(false)
+
+        }
+
     }
 
     return (
@@ -55,8 +82,12 @@ const FeedBackPopup: React.FC<FeedBackPopupProps> = ({ active, typePopup, setAct
                                 <>
                                     <div className={s.contentWrap}>
                                         <div className={s.closeBtn} onClick={() => setActive(false)}>x</div>
-                                        <input className={s.contentInput} type="text" value={name} onChange={ChangeName} placeholder="Введите имя" />
-                                        <InputName className={s.contentInput} mask="+7 (999) 999-99-99" onChange={ChangeTelNumber} value={telNumber} onClick={ClickInputName} />
+                                        <div className={nameAlert ? (s.inputWrap + ' ' + s.alertName) : s.inputWrap}>
+                                            <input className={s.contentInput} type="text" value={name} onChange={ChangeName} placeholder="Введите имя" />
+                                        </div>
+                                        <div className={telNumberAlert ? (s.inputWrap + ' ' + s.alertTelNum) : s.inputWrap}>
+                                            <InputName className={s.contentInput} mask="+7 (999) 999-99-99" onChange={ChangeTelNumber} value={telNumber} onClick={ClickInputName} />
+                                        </div>
                                         <Link href="/policy">
                                             <a className={s.policy}>Политика конфиденциальности</a>
                                         </Link>

@@ -6,6 +6,17 @@
     display: flex;
     justify-content: center;
 }
+.inputWrap{
+    position: relative;
+    &.alert:after{
+        content: 'Введите корректный номер телефона';
+        display: inline-block;
+        color: #fff;
+        position: absolute;
+        left: 50px;
+        bottom: -10px;
+    }
+}
 .input{
     font-size: 24px;
     line-height: 30px;
@@ -16,6 +27,13 @@
     padding: 10px 25px;
     margin-right: 100px;
     width: 330px;
+}
+
+.inputAlert{
+    color: #fff;
+    position: absolute;
+    // top: 0;
+    left: 0;
 }
 .btn{
     display: inline-flex;

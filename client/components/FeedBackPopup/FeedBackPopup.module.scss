@@ -59,6 +59,29 @@
 
     margin-bottom: 40px;
 }
+.inputWrap{
+    position: relative;
+    &.alertTelNum:after{
+        content: 'Введите корректный номер телефона';
+        display: inline-block;
+        font-size: 11px;
+        width: 100%;
+        color: #f00;
+        position: absolute;
+        left: 30px;
+        bottom: 20px;
+    }
+    &.alertName:after{
+        content: 'Введите имя';
+        display: inline-block;
+        font-size: 11px;
+        width: 100%;
+        color: #f00;
+        position: absolute;
+        left: 100px;
+        bottom: 20px;
+    }
+}
 .policy{
     font-size: 14px;
     // font-weight: bold;
