@@ -1,20 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
+import InputTelNumber from "react-input-mask";
 
 import s from './GetPhoneNum.module.scss'
 
 type GetPhoneNumProps = {}
 
 const GetPhoneNum: React.FC<GetPhoneNumProps> = () => {
+    const [telNumber, setTelNumber] = useState<string>('+7 (999) 999-99-99')
+
+    const onClickInput = () => {
+        setTelNumber('')
+    }
+    const onChangeText = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setTelNumber(e.target.value)
+    }
+    const onClickBtn = () => {
+    }
     return (
         <div className={s.wrap}>
             <div className={s.getPhoneNum}>
-                <input className={s.input} type="text" value="Номер телефона *" />
-                {/* <div className={s.btnWrap}> */}
+                <InputTelNumber className={s.input} mask="+7 (999) 999-99-99" onChange={onChangeText} onClick={onClickInput} value={telNumber} />
                 <Link href="/">
-                    <a className={s.btn}>получить консультацию</a>
+                    <a className={s.btn} onClick={onClickBtn}>получить консультацию</a>
                 </Link>
-                {/* </div> */}
             </div>
         </div>
 

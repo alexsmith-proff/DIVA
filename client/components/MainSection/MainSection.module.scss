@@ -10,7 +10,6 @@
     background: url("/img/nav_bg.png") no-repeat;
     background-size: cover;
     background-position: center;
-    // height: 155px;
     height: 164px;
 }
 
@@ -21,20 +20,17 @@
 }
 .circle {
     width: 155px;
-    // height: 155px;
     height: 164px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .link {
-    // width: 100px;
     text-transform: uppercase;
     font-size: 20px;
     line-height: 21px;
     color: #fff;
     padding: 0 50px;
-    // box-sizing: border-box;
     position: relative;
     &:before{
         content: '';        
@@ -74,7 +70,7 @@
     text-transform: uppercase;
     text-align: center;
     padding-top: 65px;
-    margin-bottom: 275px;
+    margin-bottom: 220px;
 }
 @media screen and (min-width: 2210px) {
     .section {
