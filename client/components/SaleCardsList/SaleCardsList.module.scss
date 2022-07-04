@@ -1,59 +1,26 @@
-.list{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-    grid-gap: 15px;
-    justify-items: center;
-    padding: 65px 0 85px;
-}
-.description {
-    display: flex;
-    justify-content: center;
+.list {
+    background-color: #fff;
+    margin-top: 65px;
+    // margin-bottom: 65px;
+    // height: 1080px;
+    // overflow-y: scroll;
 }
 .listItems {
-    padding: 45px 0 38px;
+    display: flex;
 }
 .item {
     display: flex;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
-    &Text {
-        font-size: 26px;
-        font-weight: bold;
-    }
-}
-.item:last-child {
-    margin-bottom: 0;
+    margin-right: 20px;
 }
 .itemIco {
-    margin-right: 35px;
-}
-.ruble {
-    width: 25px;
-    height: 25px;
-}
-@media screen and (max-width: 1024px) {
-    .list{
-        grid-gap: 50px;
-    }
-}
-@media screen and (max-width: 480px) {
-    .list{
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-    .listItems {
-        padding: 30px 0 30px;
-    }
-    .item {
-        margin-bottom: 20px;
-        &Text {
-            font-size: 20px;
-        }
-    }
-    .itemIco {
-        margin-right: 25px;
-    }
-    .ruble {
+    img {
         width: 20px;
-        height: 20px;
+        // height: 20px;
     }
+}
+.itemText {
+    font-size: 18px;
+    font-weight: bold;
 }
