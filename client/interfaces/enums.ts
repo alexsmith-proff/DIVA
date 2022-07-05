@@ -12,7 +12,7 @@ export enum TypeColor {
 }
 
 // Квартиранты
-export enum TypeRoomers {
+export enum TypeResidents {
     Male = 'мужчина',     // Один мужчина/парень
     Males = 'мужчины',    // Мужчины/парни
     Female = 'женщина',   // одна женщина/девушка

@@ -1,6 +1,9 @@
 import React from 'react'
+import { TypeTransaction } from '../../interfaces/enums';
 import { IFlat } from '../../interfaces/flats';
 import Card from '../Card/Card';
+
+import 'react-alice-carousel/lib/alice-carousel.css';
 
 import s from './SaleCardsList.module.scss'
 
@@ -13,7 +16,7 @@ const SaleCardsList: React.FC<SaleCardsListProps> = ({ flats }) => {
         <div className={s.list}>
             {
                 flats.map((item, index) => (
-                    <Card rooms={item.rooms} address={item.address} zone={item.zone} price={item.price} description={item.description} mainImgPath={item.mainImgPath} smallImgArrPath={item.smallImgArrPath} key={index}>
+                    <Card rooms={item.rooms} transactionType={TypeTransaction.Sale} address={item.address} zone={item.zone} price={item.price} description={item.description} photos={item.photosArr} key={index}>
                         <ul className={s.listItems}>
                             <li className={s.item}>
                                 <div className={s.itemIco}>

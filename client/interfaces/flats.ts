@@ -1,4 +1,4 @@
-import { TypeRoomers, TypeTransaction } from './enums';
+import { TypeResidents, TypeTransaction } from './enums';
 
 // Интерфейс квартира
 export interface IFlat{
@@ -10,10 +10,8 @@ export interface IFlat{
     address: string,                  // Адрес
     zone: string,                     // Район
     description: string               // Описание
-    roomers?: TypeRoomers,            // Квартиранты 
+    residents?: TypeResidents,        // Квартиранты 
     curentFloor: number,              // Этаж
     maxFloor: number,                 // Этажность
-    mainImgPath: string,              // Путь к основному изображению
-    smallImgArrPath: string[],        // Массив маленьких изображений
-    BigImgArrPath: string[],            // Массив больших изображений
+    photosArr: string[],              // Массив фотографий
 }

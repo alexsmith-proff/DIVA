@@ -1,9 +1,6 @@
 .list {
     background-color: #fff;
     margin-top: 65px;
-    // margin-bottom: 65px;
-    // height: 1080px;
-    // overflow-y: scroll;
 }
 .listItems {
     display: flex;
@@ -15,9 +12,9 @@
     margin-right: 20px;
 }
 .itemIco {
+    margin-right: 5px;
     img {
         width: 20px;
-        // height: 20px;
     }
 }
 .itemText {

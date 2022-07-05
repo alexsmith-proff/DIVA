@@ -1,4 +1,5 @@
 import React from 'react'
+import { TypeTransaction } from '../../interfaces/enums';
 import { IFlat } from '../../interfaces/flats';
 import Card from '../Card/Card';
 
@@ -13,18 +14,8 @@ const ArendaCardsList: React.FC<ArendaCardsListProps> = ({ flats }) => {
         <div className={s.list}>
             {
                 flats.map((item, index) => (
-                    <Card rooms={item.rooms} mainImgUrl={item.mainImgUrl} url={item.url} key={index}>
-                        <div className={s.description}>
+                    <Card rooms={item.rooms} transactionType={TypeTransaction.Rent} address={item.address} zone={item.zone} price={item.price} description={item.description} photos={item.photosArr} key={index}>
                             <ul className={s.listItems}>
-                                <li className={s.item}>
-                                    <div className={s.itemIco}>
-                                        <img src="img/coins-ico.png" alt="coins-ico" />
-                                    </div>
-                                    <div className={s.itemText}>
-                                        {item.price}
-                                    </div>
-                                    <img className={s.ruble} src="img/ruble.png" alt="ruble-img" />
-                                </li>
                                 <li className={s.item}>
                                     <div className={s.itemIco}>
                                         <img src="img/floor-ico.png" alt="floor-ico" />
@@ -38,11 +29,10 @@ const ArendaCardsList: React.FC<ArendaCardsListProps> = ({ flats }) => {
                                         <img src="img/residents-ico.png" alt="residents-ico" />
                                     </div>
                                     <div className={s.itemText}>
-                                        {item.roomers}
+                                        {item.residents}
                                     </div>
                                 </li>
                             </ul>
-                        </div>
                     </Card>
                 ))
             }

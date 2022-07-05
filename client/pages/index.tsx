@@ -17,7 +17,7 @@ function Index() {
         <TopNav />
         <MainSection />
         <SaleSection />
-        {/* <ArendaSection /> */}
+        <ArendaSection />
         <ServiceSection />
         <ReviewsSection />
         <PartnersSection />

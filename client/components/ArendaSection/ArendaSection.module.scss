@@ -1,9 +1,7 @@
 .section{
     background: url("/img/rent_bg.png") no-repeat;
     background-size: cover;
-}
-.btn{
-    display: flex;
-    justify-content: center;
-    padding-bottom: 60px;
+    background-position: center;
+    background-attachment:fixed;
+    padding-bottom: 50px;
 }
