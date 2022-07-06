@@ -13,7 +13,7 @@ const MainSection: React.FC<MainSectionProps> = () => {
             <div className={s.nav}>
                 <div className="container">
                     <div className={s.navWrap}>
-                        <Link href="/">
+                        <Link href="#sale">
                             <a className={s.link}>продажа</a>
                         </Link>
                         <div className={s.circle}>
@@ -23,7 +23,7 @@ const MainSection: React.FC<MainSectionProps> = () => {
                                 </a>
                             </Link>
                         </div>
-                        <Link href="/">
+                        <Link href="#rent">
                             <a className={s.link}>аренда</a>
                         </Link>
                     </div>

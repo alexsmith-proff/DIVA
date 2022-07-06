@@ -71,7 +71,7 @@ type SaleSectionProps = {}
 
 const SaleSection: React.FC<SaleSectionProps> = () => {
     return (
-        <div className={s.section}>
+        <div className={s.section} id="sale">
             <SectionTitle backgroundColor={TypeColor.white}>
                 Продажа
             </SectionTitle>

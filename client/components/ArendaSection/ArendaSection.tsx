@@ -67,7 +67,7 @@ type ArendaSectionProps = {}
 
 const ArendaSection: React.FC<ArendaSectionProps> = () => {
     return (
-        <div className={s.section}>
+        <div className={s.section} id="rent">
             <SectionTitle backgroundColor={TypeColor.black}>
                 Аренда
             </SectionTitle>

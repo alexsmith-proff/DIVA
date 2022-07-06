@@ -14,6 +14,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
         <>
             <Head>
                 <title>ДИВА Недвижимость</title>
+                <link rel="shortcut icon" href="/favicon.ico" />
                 {/* <link rel="preconnect" href="https://fonts.googleapis.com"></link>
                 <link rel="preconnect" href="https://fonts.gstatic.com"></link>
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" /> */}
