@@ -14,9 +14,9 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
         <>
             <Head>
                 <title>ДИВА Недвижимость</title>
-                <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+                {/* <link rel="preconnect" href="https://fonts.googleapis.com"></link>
                 <link rel="preconnect" href="https://fonts.gstatic.com"></link>
-                <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"></link>
+                <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" /> */}
             </Head>
             <Header />
             {children}

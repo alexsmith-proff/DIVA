@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import validator from 'validator';
 import Link from 'next/link';
 import { TypePopup } from '../../interfaces/enums';
@@ -19,6 +19,9 @@ const FeedBackPopup: React.FC<FeedBackPopupProps> = ({ active, typePopup, setAct
     const [telNumber, setTelNumber] = useState<string>('+7 (999) 999-99-99')
     const [nameAlert, setNameAlert] = useState<boolean>(false)
     const [telNumberAlert, setTelNumberAlert] = useState<boolean>(false)
+
+    const inputRef = useRef<HTMLInputElement>(null)
+
     useEffect(() => {
         if (active) {
             document.body.style.overflow = "hidden"
@@ -35,6 +38,8 @@ const FeedBackPopup: React.FC<FeedBackPopupProps> = ({ active, typePopup, setAct
     }
     const ClickInputName = () => {
         setTelNumber('')
+        inputRef.current.selectionStart = 4
+        inputRef.current.selectionEnd = 4
     }
 
     const Send = async() => {
@@ -50,11 +55,8 @@ const FeedBackPopup: React.FC<FeedBackPopupProps> = ({ active, typePopup, setAct
         }
         if (validator.isMobilePhone(telNumberProcessed, 'any') && (telNumberProcessed != '+79999999999')) {
             setTelNumberAlert(false)
-            console.log('yes');
-            
         }else{
             setTelNumberAlert(true)
-            console.log('no');
         }
         // Проверяем Российский номер и номер не +79999999999
         if ((validator.isMobilePhone(telNumberProcessed, 'any')) && (telNumberProcessed != '+79999999999')&&(name != '')) {
@@ -89,7 +91,7 @@ const FeedBackPopup: React.FC<FeedBackPopupProps> = ({ active, typePopup, setAct
                                             <input className={s.contentInput} type="text" value={name} onChange={ChangeName} placeholder="Введите имя" />
                                         </div>
                                         <div className={telNumberAlert ? (s.inputWrap + ' ' + s.alertTelNum) : s.inputWrap}>
-                                            <InputName className={s.contentInput} mask="+7 (999) 999-99-99" onChange={ChangeTelNumber} value={telNumber} onClick={ClickInputName} />
+                                            <InputName className={s.contentInput} mask="+7 (999) 999-99-99" onChange={ChangeTelNumber} value={telNumber} onMouseDown={ClickInputName} onClick={ClickInputName} ref={inputRef} />
                                         </div>
                                         <Link href="/policy">
                                             <a className={s.policy}>Политика конфиденциальности</a>

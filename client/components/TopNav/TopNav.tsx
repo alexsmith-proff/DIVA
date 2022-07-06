@@ -39,8 +39,8 @@ const TopNav: React.FC<TopNavProps> = () => {
                 <Link href={'mailto:' + 'rieltagent.proff@mail.ru'}>
                     <a className={s.item + ' ' + s.desktop}>
                         <svg className={s.ico} width="29" height="23" viewBox="0 0 29 23" fill="none">
-                            <path d="M25.2344 1H3.57812C2.15427 1 1 2.15427 1 3.57812V19.0469C1 20.4707 2.15427 21.625 3.57812 21.625H25.2344C26.6582 21.625 27.8125 20.4707 27.8125 19.0469V3.57812C27.8125 2.15427 26.6582 1 25.2344 1Z" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M5.125 5.125L14.4062 12.3438L23.6875 5.125" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M25.2344 1H3.57812C2.15427 1 1 2.15427 1 3.57812V19.0469C1 20.4707 2.15427 21.625 3.57812 21.625H25.2344C26.6582 21.625 27.8125 20.4707 27.8125 19.0469V3.57812C27.8125 2.15427 26.6582 1 25.2344 1Z" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M5.125 5.125L14.4062 12.3438L23.6875 5.125" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                         <div className={s.text}>rieltagent.proff@mail.ru</div>
                     </a>

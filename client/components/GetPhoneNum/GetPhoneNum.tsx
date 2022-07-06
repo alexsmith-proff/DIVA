@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 // import Link from 'next/link'
 import InputTelNumber from "react-input-mask";
 
@@ -16,9 +16,13 @@ const GetPhoneNum: React.FC<GetPhoneNumProps> = () => {
     const [telNumber, setTelNumber] = useState<string>('+7 (999) 999-99-99')
     const [telNumberAlert, setTelNumberAlert] = useState<boolean>(false)
 
+    const inputRef = useRef<HTMLInputElement>(null)
+
 
     const onClickInput = () => {
         setTelNumber('')
+        inputRef.current.selectionStart = 4
+        inputRef.current.selectionEnd = 4
     }
     const onChangeText = (e: React.ChangeEvent<HTMLInputElement>) => {
         setTelNumber(e.target.value)
@@ -63,7 +67,7 @@ const GetPhoneNum: React.FC<GetPhoneNumProps> = () => {
             </FeedBackPopup>
             <div className={s.getPhoneNum}>
                 <div className={telNumberAlert ? (s.inputWrap + ' ' + s.alert) : s.inputWrap}>
-                    <InputTelNumber className={(s.input)} mask="+7 (999) 999-99-99" onChange={onChangeText} onClick={onClickInput} value={telNumber} />
+                    <InputTelNumber className={(s.input)} mask="+7 (999) 999-99-99" onChange={onChangeText} onMouseDown={onClickInput} onClick={onClickInput} value={telNumber} ref={inputRef} />
                 </div>
                 <button className={s.btn} onClick={onClickBtn}>получить консультацию</button>
             </div>

@@ -33,9 +33,7 @@ const ImagesViewer: React.FC<ImagesViewerProps> = ({ photos, mainPhotoNum, width
     }, [activePopup])
 
     return (
-        <div className={s.photo}
-            style={{ maxWidth: widthContent + 'px' }}
-        >
+        <div className={s.photo} style={{ maxWidth: widthContent + 'px' }}>
             <div className={s.mainPhoto}>
                 <img src={photos[currentPhotoNum]} alt="main_photo" onClick={() => HandleClick()}
                 // style={
@@ -49,7 +47,7 @@ const ImagesViewer: React.FC<ImagesViewerProps> = ({ photos, mainPhotoNum, width
             <div className={s.smallPhotoList}>
                 {
                     photos.map((item, index) => (
-                        <div className={s.smallPhoto} style={{ marginRight: gapSmallPhoto + 'px', marginBottom: gapSmallPhoto + 'px' }}>
+                        <div className={s.smallPhoto} style={{ marginRight: gapSmallPhoto + 'px', marginBottom: gapSmallPhoto + 'px' }} key={index}>
                             <img src={item} alt="small_photo" onClick={() => setcurrentPhotoNum(index)} key={index} style={{ width: widthSmallPhoto + 'px', height: heightSmallPhoto + 'px' }} />
                         </div>
                     ))

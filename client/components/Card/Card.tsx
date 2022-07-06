@@ -43,9 +43,7 @@ const Card: React.FC<CardProps> = ({ children, transactionType, rooms, address, 
             </div>
             <div className={s.cardWrap}>
                 <div className={s.photo}>
-
-                    <ImagesViewer photos={photos} mainPhotoNum={0}  widthContent={440} widthSmallPhoto={60} heightSmallPhoto={60} gapSmallPhoto={5}  />
-
+                    <ImagesViewer photos={photos} mainPhotoNum={0} widthContent={440} widthSmallPhoto={60} heightSmallPhoto={60} gapSmallPhoto={5} />
                 </div>
                 <div className={s.description}>
                     <div className={s.descriptionTop}>
