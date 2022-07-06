@@ -5,6 +5,7 @@ import { TypePopup } from '../../interfaces/enums';
 import InputName from "react-input-mask";
 
 import s from './FeedBackPopup.module.scss'
+import allEndPoints from '../../services/api/api';
 
 type FeedBackPopupProps = {
     children?: React.ReactNode
@@ -36,7 +37,7 @@ const FeedBackPopup: React.FC<FeedBackPopupProps> = ({ active, typePopup, setAct
         setTelNumber('')
     }
 
-    const Send = () => {
+    const Send = async() => {
         // Валидация полей ввода
         // Убираем '(', ')', '-' и пробелы. (+7 (963) 111-96-12 приводим к +79631119612)
         const telNumberProcessed = telNumber.replace(/[\(\)\-\s]/g, '')
@@ -57,9 +58,11 @@ const FeedBackPopup: React.FC<FeedBackPopupProps> = ({ active, typePopup, setAct
         }
         // Проверяем Российский номер и номер не +79999999999
         if ((validator.isMobilePhone(telNumberProcessed, 'any')) && (telNumberProcessed != '+79999999999')&&(name != '')) {
-            // Отправка на сервер telNumber
-
             // Отпрака данных на сервер
+            await allEndPoints.auth.sendNameAndPhoneNumberToMail({
+                name: name,
+                phone: telNumber
+            })
 
             // Очистка полей ввода
             setName('')

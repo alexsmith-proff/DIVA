@@ -7,6 +7,7 @@ import validator from 'validator';
 import s from './GetPhoneNum.module.scss'
 import { TypePopup } from '../../interfaces/enums';
 import FeedBackPopup from '../FeedBackPopup/FeedBackPopup';
+import allEndPoints from '../../services/api/api';
 
 type GetPhoneNumProps = {}
 
@@ -22,10 +23,8 @@ const GetPhoneNum: React.FC<GetPhoneNumProps> = () => {
     const onChangeText = (e: React.ChangeEvent<HTMLInputElement>) => {
         setTelNumber(e.target.value)
     }
-    const onClickBtn = () => {
+    const onClickBtn = async() => {
         // Валидация телефонного номера 
-        // console.log(telNumber.replace(/[\(\)\-\s]/g, ''));
-
         // Убираем '(', ')', '-' и пробелы. (+7 (963) 111-96-12 приводим к +79631119612)
         const telNumberProcessed = telNumber.replace(/[\(\)\-\s]/g, '')
 
@@ -33,6 +32,13 @@ const GetPhoneNum: React.FC<GetPhoneNumProps> = () => {
         if ((validator.isMobilePhone(telNumberProcessed, 'any')) && (telNumberProcessed != '+79999999999')) {
             setTelNumberAlert(false)
             // Отправка на сервер telNumber
+            try {
+                await allEndPoints.auth.sendPhoneNumberToMail({phone: telNumber})
+                
+            } catch (error) {
+                console.log(error);
+            }
+
 
             // Очистка поля ввода telNumber
             setTelNumber('+7 (999) 999-99-99')
