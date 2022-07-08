@@ -13,7 +13,7 @@ const ReviewsList: React.FC<ReviewsListProps> = ({ reviews }) => {
     useEffect(() => {
         setInterval(() => {
             setIndexActive(prev => prev < reviews.length - 1 ? prev + 1 : 0)
-        }, 10000)
+        }, 2000)
     }, [])
     return (
         <>
