@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React, { useEffect } from 'react'
 import { TypeTransaction } from '../../interfaces/enums'
 import ImagesViewer from '../ImagesViewer/ImagesViewer'
@@ -30,7 +31,10 @@ const Card: React.FC<CardProps> = ({ children, transactionType, rooms, address, 
                         transactionType == TypeTransaction.Sale &&
                         <>
                             <span className={s.price}>{price}</span>
-                            <img className={s.rubleIco} src="img/ruble.png" alt="ruble-ico" />
+                            <div className={s.rubleIco}>
+                                <Image src="/img/ruble.png" alt="ruble-ico" width="20" height="20" />
+                            </div>
+
                         </>
                     }
                     {
@@ -59,7 +63,10 @@ const Card: React.FC<CardProps> = ({ children, transactionType, rooms, address, 
                                         (
                                             <>
                                                 <span className={s.price}>{price}</span>
-                                                <img className={s.rubleIco} src="img/ruble.png" alt="ruble-ico" />
+                                                <div className={s.rubleIco}>
+                                                    <Image className={s.rubleIco} src="/img/ruble.png" alt="ruble-ico" width="20" height="20" />
+                                                </div>
+
                                             </>
                                         )
                                         :

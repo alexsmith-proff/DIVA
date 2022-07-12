@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react'
 import { TypeTransaction } from '../../interfaces/enums';
 import { IFlat } from '../../interfaces/flats';
@@ -18,7 +19,7 @@ const ArendaCardsList: React.FC<ArendaCardsListProps> = ({ flats }) => {
                             <ul className={s.listItems}>
                                 <li className={s.item}>
                                     <div className={s.itemIco}>
-                                        <img src="img/floor-ico.png" alt="floor-ico" />
+                                        <Image src="/img/floor-ico.png" alt="floor-ico" width="20" height="20" />
                                     </div>
                                     <div className={s.itemText}>
                                         {item.curentFloor}/{item.maxFloor} эт
@@ -26,7 +27,7 @@ const ArendaCardsList: React.FC<ArendaCardsListProps> = ({ flats }) => {
                                 </li>
                                 <li className={s.item}>
                                     <div className={s.itemIco}>
-                                        <img src="img/residents-ico.png" alt="residents-ico" />
+                                        <Image src="/img/residents-ico.png" alt="residents-ico" width="20" height="20" />
                                     </div>
                                     <div className={s.itemText}>
                                         {item.residents}

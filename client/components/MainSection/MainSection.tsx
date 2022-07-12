@@ -4,6 +4,7 @@ import TopNav from '../TopNav/TopNav';
 
 import s from './MainSection.module.scss'
 import GetPhoneNum from '../GetPhoneNum/GetPhoneNum';
+import Image from 'next/image';
 
 type MainSectionProps = {}
 
@@ -19,7 +20,7 @@ const MainSection: React.FC<MainSectionProps> = () => {
                         <div className={s.circle}>
                             <Link href="/">
                                 <a>
-                                    <img className={s.logo} src="img/logo-main.png" alt="logo" />
+                                    <Image className={s.logo} src="/img/logo-main.png" alt="logo" width="105" height="91" />
                                 </a>
                             </Link>
                         </div>

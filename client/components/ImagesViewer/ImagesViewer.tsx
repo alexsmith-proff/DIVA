@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React, { useEffect, useState } from 'react'
 
 import s from './ImagesViewer.module.scss'
@@ -35,7 +36,7 @@ const ImagesViewer: React.FC<ImagesViewerProps> = ({ photos, mainPhotoNum, width
     return (
         <div className={s.photo} style={{ maxWidth: widthContent + 'px' }}>
             <div className={s.mainPhoto}>
-                <img src={photos[currentPhotoNum]} alt="main_photo" onClick={() => HandleClick()}
+                <Image src={photos[currentPhotoNum]} alt="main_photo" width="440" height="580"  onClick={() => HandleClick()}
                 // style={
                 //     { 
                 //         width: widthBigPhoto + 'px',
@@ -48,7 +49,7 @@ const ImagesViewer: React.FC<ImagesViewerProps> = ({ photos, mainPhotoNum, width
                 {
                     photos.map((item, index) => (
                         <div className={s.smallPhoto} style={{ marginRight: gapSmallPhoto + 'px', marginBottom: gapSmallPhoto + 'px' }} key={index}>
-                            <img src={item} alt="small_photo" onClick={() => setcurrentPhotoNum(index)} key={index} style={{ width: widthSmallPhoto + 'px', height: heightSmallPhoto + 'px' }} />
+                            <Image src={item} alt="small_photo" width="60" height="60" onClick={() => setcurrentPhotoNum(index)} key={index} style={{ width: widthSmallPhoto + 'px', height: heightSmallPhoto + 'px' }} />
                         </div>
                     ))
                 }
@@ -59,13 +60,13 @@ const ImagesViewer: React.FC<ImagesViewerProps> = ({ photos, mainPhotoNum, width
                     <div className={s.popup + ' ' + s.active}>
                         <div className={s.content + ' ' + s.active} onClick={e => e.stopPropagation()}>
                             <div className={s.popupBigPhoto}>
-                                <img src={photos[currentPhotoNum]} alt="main-photo" onClick={() => setcurrentPhotoNum((prev) => prev < photos.length - 1 ? prev + 1 : 0)} />
+                                <Image src={photos[currentPhotoNum]} alt="main-photo" width="600" height="800" onClick={() => setcurrentPhotoNum((prev) => prev < photos.length - 1 ? prev + 1 : 0)} />
                             </div>
                             <div className={s.popupSmallPhotoList}>
                                 {
                                     photos.map((item, index) => (
-                                        <div className={s.popupSmallPhoto}>
-                                            <img src={item} alt="small-photo" onClick={() => setcurrentPhotoNum(index)} key={index} />
+                                        <div className={s.popupSmallPhoto} key={index}>
+                                            <Image src={item} alt="small-photo" width="60" height="60" onClick={() => setcurrentPhotoNum(index)} key={index} />
                                         </div>
                                     ))
                                 }
