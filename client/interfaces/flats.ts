@@ -5,7 +5,7 @@ export interface IFlat{
     _id?: string,                     // Id
     transactionType: TypeTransaction, // Тип сделки
     rooms: number,                    // Количество комнат
-    price: number,                    // Цена
+    price: string,                    // Цена
     area?: number,                    // Площадь
     address: string,                  // Адрес
     zone: string,                     // Район

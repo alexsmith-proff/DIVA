@@ -13,9 +13,9 @@ const SectionTitle: React.FC<SectionTitleProps> = ({ children, backgroundColor, 
     return (
         <div className={s.sectionTitle}>
             <div className={(noBorder ? s.title : (s.title + ' ' + s.border)) + (backgroundColor == TypeColor.white ? (' ' + s.white) : '') + (backgroundColor == TypeColor.black ? (' ' + s.black) : '')}>
-                <div className={s.text}>
+                <h2 className={s.text}>
                     {children}
-                </div>
+                </h2>
             </div>
 
         </div>

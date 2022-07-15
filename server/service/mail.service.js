@@ -12,7 +12,7 @@ export async function sendMail(name, phone) {
     })
     await transporter.sendMail({
         from: 'Сайт ДИВА Недвижимость <alex_kuz84@mail.ru>',
-        to: 'fifeko3440@meidir.com',
+        to: 'alex_kuz84@mail.ru',
         subject: 'Лид с сайта ДИВА Недвижимость',
         // text: 'Свяжитесь' + (name != '' ? ' c ' + name : ' по номеру ' + phone),
         html: 

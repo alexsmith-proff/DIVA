@@ -11,7 +11,7 @@ type CardProps = {
     rooms: number,
     address: string,
     zone: string,
-    price: number,
+    price: string,
     description: string,
     photos: string[]
 }

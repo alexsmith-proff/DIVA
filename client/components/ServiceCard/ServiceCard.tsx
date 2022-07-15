@@ -16,7 +16,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ path, text, width, height }) 
             <div className={s.cardImg}>
                 <Image src={path} alt="service-img" width={width} height={height} />
             </div>
-            <h3 className={s.text}>{text}</h3>
+            <h2 className={s.text}>{text}</h2>
         </div>
     );
 };

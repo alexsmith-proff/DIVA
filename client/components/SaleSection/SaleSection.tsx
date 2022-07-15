@@ -1,5 +1,5 @@
 import React from 'react'
-import { TypeBtn, TypeColor, TypeTransaction } from '../../interfaces/enums';
+import { TypeColor, TypeTransaction } from '../../interfaces/enums';
 import { IFlat } from '../../interfaces/flats';
 // import Btn from '../Btn/Btn';
 import SaleCardsList from '../SaleCardsList/SaleCardsList';
@@ -12,7 +12,7 @@ const saleFlats: IFlat[] = [
         _id: '1',
         transactionType: TypeTransaction.Sale,
         rooms: 1,
-        price: 1750000,
+        price: '1 750 000',
         area: 38,
         curentFloor: 7,
         maxFloor: 10,
@@ -31,7 +31,7 @@ const saleFlats: IFlat[] = [
         _id: '2',
         transactionType: TypeTransaction.Sale,
         rooms: 1,
-        price: 1750000,
+        price: '1 750 000',
         area: 38,
         curentFloor: 7,
         maxFloor: 10,
@@ -50,7 +50,7 @@ const saleFlats: IFlat[] = [
         _id: '3',
         transactionType: TypeTransaction.Sale,
         rooms: 1,
-        price: 1750000,
+        price: '1 750 000',
         area: 38,
         curentFloor: 7,
         maxFloor: 10,
@@ -71,15 +71,14 @@ type SaleSectionProps = {}
 
 const SaleSection: React.FC<SaleSectionProps> = () => {
     return (
-        <div className={s.section} id="sale">
+        <section className={s.section} id="sale">
             <SectionTitle backgroundColor={TypeColor.white}>
                 Продажа
             </SectionTitle>
             <div className="container">
                 <SaleCardsList flats={saleFlats} />
             </div>
-
-        </div>
+        </section>
     );
 };
 

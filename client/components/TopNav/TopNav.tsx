@@ -48,7 +48,6 @@ const TopNav: React.FC<TopNavProps> = () => {
 
             </div>
         </div>
-
     );
 };
 

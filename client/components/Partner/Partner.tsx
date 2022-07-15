@@ -12,7 +12,6 @@ type PartnerProps = {
 const Partner: React.FC<PartnerProps> = ({ path, width, height }) => {
     return (
         <div className={s.partner}>
-            {/* <img className={s.partnerImg} src={path} alt="partner-img" /> */}
             <div className={s.partnerImg}>
                 <Image className={s.partnerImg} src={path} width={width} height={height} alt="partner-img" />
             </div>

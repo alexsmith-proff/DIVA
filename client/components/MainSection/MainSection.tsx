@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-import TopNav from '../TopNav/TopNav';
 
 import s from './MainSection.module.scss'
 import GetPhoneNum from '../GetPhoneNum/GetPhoneNum';
@@ -10,7 +9,7 @@ type MainSectionProps = {}
 
 const MainSection: React.FC<MainSectionProps> = () => {
     return (
-        <div className={s.section}>
+        <section className={s.section}>
             <div className={s.nav}>
                 <div className="container">
                     <div className={s.navWrap}>
@@ -31,10 +30,10 @@ const MainSection: React.FC<MainSectionProps> = () => {
                 </div>
             </div>
             <h1 className={s.titleText}>
-                Продажа и аренда недвижимости в пензе<br/>опыт работы более 10 лет
+                Продажа и аренда недвижимости в Пензе<br/>опыт работы более 10 лет
             </h1>
             <GetPhoneNum />
-        </div >
+        </section >
     );
 };
 

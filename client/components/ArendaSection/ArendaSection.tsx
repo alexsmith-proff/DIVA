@@ -2,7 +2,6 @@ import React from 'react'
 import { TypeColor, TypeResidents, TypeTransaction } from '../../interfaces/enums';
 import { IFlat } from '../../interfaces/flats';
 import ArendaCardsList from '../ArendaCardsList/ArendaCardsList';
-import Btn from '../Btn/Btn';
 import SectionTitle from '../SectionTitle/SectionTitle';
 
 import s from './ArendaSection.module.scss'
@@ -12,7 +11,7 @@ const arendaFlats: IFlat[] = [
         _id: '1',
         transactionType: TypeTransaction.Rent,
         rooms: 1,
-        price: 10000,
+        price: '10 000',
         residents: TypeResidents.All,
         curentFloor: 7,
         maxFloor: 12,
@@ -31,7 +30,7 @@ const arendaFlats: IFlat[] = [
         _id: '2',
         transactionType: TypeTransaction.Rent,
         rooms: 1,
-        price: 9000,
+        price: '9 000',
         residents: TypeResidents.All,
         area: 44,
         curentFloor: 3,
@@ -70,7 +69,7 @@ type ArendaSectionProps = {}
 
 const ArendaSection: React.FC<ArendaSectionProps> = () => {
     return (
-        <div className={s.section} id="rent">
+        <section className={s.section} id="rent">
             <SectionTitle backgroundColor={TypeColor.black}>
                 Аренда
             </SectionTitle>
@@ -78,7 +77,7 @@ const ArendaSection: React.FC<ArendaSectionProps> = () => {
                 <ArendaCardsList flats={arendaFlats} />
             </div>
 
-        </div>
+        </section>
     );
 };
 

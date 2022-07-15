@@ -10,7 +10,7 @@ type FeedBackSectionProps = {}
 const FeedBackSection: React.FC<FeedBackSectionProps> = () => {
     const [activeFeedBackPopup, setActiveFeedBackPopup] = useState<boolean>(false)
     return (
-        <>
+        <section>
             {/* Добавляем FeedBackPopup чтобы не прокидывать пропсы из index */}
             <FeedBackPopup active={activeFeedBackPopup} setActive={setActiveFeedBackPopup} typePopup={TypePopup.FeedBack}/>
             <div className="container">
@@ -24,7 +24,7 @@ const FeedBackSection: React.FC<FeedBackSectionProps> = () => {
                     </div>
                 </section>
             </div>
-        </>
+        </section>
     );
 };
 

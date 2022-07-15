@@ -41,14 +41,14 @@ type ReviewsSectionProps = {}
 
 const ReviewsSection: React.FC<ReviewsSectionProps> = () => {
     return (
-        <div className={s.section}>
+        <section className={s.section}>
             <SectionTitle backgroundColor={TypeColor.black}>
                 Отзывы о нас
             </SectionTitle>
             <div className="container">
                 <ReviewsList reviews={reviews}/>
             </div>
-        </div>
+        </section>
     );
 };
 

@@ -17,33 +17,33 @@ const Review: React.FC<ReviewProps> = ({ review, isDesktop, indexActive, index }
                 <>
                     {
                         review.side == 'left-top' &&
-                        <div className={(s.review + ' ' + s.left + ' ' + s.top) + (index == indexActive ? ' ' + s.active : '')} style={{ left: review.X, top: review.Y }}>
+                        <p className={(s.review + ' ' + s.left + ' ' + s.top) + (index == indexActive ? ' ' + s.active : '')} style={{ left: review.X, top: review.Y }}>
                             {review.text}
-                        </div>
+                        </p>
                     }
                     {
                         review.side == 'right-top' &&
-                        <div className={(s.review + ' ' + s.right + ' ' + s.top) + (index == indexActive ? ' ' + s.active : '')} style={{ left: review.X, top: review.Y }}>
+                        <p className={(s.review + ' ' + s.right + ' ' + s.top) + (index == indexActive ? ' ' + s.active : '')} style={{ left: review.X, top: review.Y }}>
                             {review.text}
-                        </div>
+                        </p>
                     }
                     {
                         review.side == 'left-bottom' &&
-                        <div className={(s.review + ' ' + s.left + ' ' + s.bottom) + (index == indexActive ? ' ' + s.active : '')} style={{ left: review.X, top: review.Y }}>
+                        <p className={(s.review + ' ' + s.left + ' ' + s.bottom) + (index == indexActive ? ' ' + s.active : '')} style={{ left: review.X, top: review.Y }}>
                             {review.text}
-                        </div>
+                        </p>
                     }
                     {
                         review.side == 'right-bottom' &&
-                        <div className={(s.review + ' ' + s.right + ' ' + s.bottom) + (index == indexActive ? ' ' + s.active : '')} style={{ left: review.X, top: review.Y }}>
+                        <p className={(s.review + ' ' + s.right + ' ' + s.bottom) + (index == indexActive ? ' ' + s.active : '')} style={{ left: review.X, top: review.Y }}>
                             {review.text}
-                        </div>
+                        </p>
                     }
                 </>
                 :
-                <div className={s.mobile}>
+                <p className={s.mobile}>
                     {review.text}
-                </div>
+                </p>
 
 
         }

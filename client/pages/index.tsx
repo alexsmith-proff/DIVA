@@ -6,15 +6,12 @@ import PartnersSection from '../components/PartnersSection/PartnersSection'
 import ReviewsSection from '../components/ReviewsSection/ReviewsSection'
 import SaleSection from '../components/SaleSection/SaleSection'
 import ServiceSection from '../components/ServiceSection/ServiceSection'
-import TopNav from '../components/TopNav/TopNav'
 import MainLayout from '../layouts/MainLayout/MainLayout'
-import s from './index.module.scss'
 
 function Index() {
   return (
     <div>
       <MainLayout >
-        <TopNav />
         <MainSection />
         <SaleSection />
         <ArendaSection />

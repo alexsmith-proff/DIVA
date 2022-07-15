@@ -4,6 +4,7 @@ const nextConfig = {
   env: {
     SERVER_URL: 'http://localhost:5000'
   },
+  
 }
 
 module.exports = nextConfig
