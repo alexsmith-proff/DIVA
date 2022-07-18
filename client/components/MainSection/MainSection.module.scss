@@ -1,9 +1,13 @@
 .section {
     background: url("/img/title_bg.png") no-repeat;
-    background-size: cover 50px;
-    background-position: center -140px;
-    height: 1079px;
+    background-size: cover;
+    // background-position: 0 -140px;
+    // background-position-x: center;
+    // background-position-y: -140px;
+    // height: 2079px;
     padding-top: 20px;
+    // background-attachment:fixed;
+    // padding-bottom: 100px;
 }
 
 .nav {

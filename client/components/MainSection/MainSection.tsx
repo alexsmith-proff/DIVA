@@ -4,6 +4,8 @@ import Link from 'next/link'
 import s from './MainSection.module.scss'
 import GetPhoneNum from '../GetPhoneNum/GetPhoneNum';
 import Image from 'next/image';
+import SectionTitle from '../SectionTitle/SectionTitle';
+import { TypeColor } from '../../interfaces/enums';
 
 type MainSectionProps = {}
 
@@ -33,6 +35,7 @@ const MainSection: React.FC<MainSectionProps> = () => {
                 Продажа и аренда недвижимости в Пензе<br/>опыт работы более 10 лет
             </h1>
             <GetPhoneNum />
+
         </section >
     );
 };
