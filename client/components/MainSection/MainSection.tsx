@@ -1,11 +1,12 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image';
+
+import GetPhoneNum from '../GetPhoneNum/GetPhoneNum';
+
+import logoImg from '../../public/img/logo-main.png'
 
 import s from './MainSection.module.scss'
-import GetPhoneNum from '../GetPhoneNum/GetPhoneNum';
-import Image from 'next/image';
-import SectionTitle from '../SectionTitle/SectionTitle';
-import { TypeColor } from '../../interfaces/enums';
 
 type MainSectionProps = {}
 
@@ -21,7 +22,14 @@ const MainSection: React.FC<MainSectionProps> = () => {
                         <div className={s.circle}>
                             <Link href="/">
                                 <a>
-                                    <Image className={s.logo} src="/img/logo-main.png" alt="logo" width="105" height="91" />
+                                    <Image
+                                        className={s.logo}
+                                        alt="logo"
+                                        src={logoImg}
+                                        width={105}
+                                        height={91}
+                                        placeholder="blur"
+                                    />
                                 </a>
                             </Link>
                         </div>
@@ -32,7 +40,7 @@ const MainSection: React.FC<MainSectionProps> = () => {
                 </div>
             </div>
             <h1 className={s.titleText}>
-                Продажа и аренда недвижимости в Пензе<br/>опыт работы более 10 лет
+                Продажа и аренда недвижимости в Пензе<br />опыт работы более 10 лет
             </h1>
             <GetPhoneNum />
 

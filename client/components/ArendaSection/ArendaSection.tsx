@@ -8,7 +8,7 @@ import s from './ArendaSection.module.scss'
 
 const arendaFlats: IFlat[] = [
     {
-        _id: '1',
+        _id: '11',
         transactionType: TypeTransaction.Rent,
         rooms: 1,
         price: '10 000',
@@ -27,7 +27,7 @@ const arendaFlats: IFlat[] = [
         ]
     },
     {
-        _id: '2',
+        _id: '12',
         transactionType: TypeTransaction.Rent,
         rooms: 1,
         price: '9 000',

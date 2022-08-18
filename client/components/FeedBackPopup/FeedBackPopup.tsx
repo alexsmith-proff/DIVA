@@ -93,8 +93,8 @@ const FeedBackPopup: React.FC<FeedBackPopupProps> = ({ active, typePopup, setAct
                                         <div className={telNumberAlert ? (s.inputWrap + ' ' + s.alertTelNum) : s.inputWrap}>
                                             <InputName className={s.contentInput} mask="+7 (999) 999-99-99" onChange={ChangeTelNumber} value={telNumber} onMouseDown={ClickInputName} onClick={ClickInputName} ref={inputRef} />
                                         </div>
-                                        <Link href="/policy">
-                                            <a className={s.policy}>Политика конфиденциальности</a>
+                                        <Link href="/privacy">
+                                            <a className={s.privacy}>Политика конфиденциальности</a>
                                         </Link>
                                     </div>
                                 </>

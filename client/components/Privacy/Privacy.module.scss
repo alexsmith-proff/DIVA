@@ -1,0 +1,47 @@
+.section{
+    background-color: #eaeaea;
+    padding-bottom: 70px;
+}
+.logo{
+    text-align: center;
+    padding: 55px 0 80px 20px;
+}
+.title{
+    font-size: 38px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+.parag{
+    font-size: 18px;
+    line-height: 30px;
+    margin-bottom: 20px;
+    text-align: justify;
+    text-indent: 40px;
+}
+
+@media screen and (max-width: 1024px) {
+    .title{
+        font-size: 30px;
+        margin-bottom: 60px;
+    }
+    .parag{
+        font-size: 16px;
+        line-height: 26px;
+    }   
+}
+@media screen and (max-width: 348px) {
+    .logo{
+        padding: 55px 0 50px 20px;
+    }
+    .title{
+        font-size: 24px;
+        margin-bottom: 40px;
+    }
+    .parag{
+        font-size: 14px;
+        text-indent: 30px;
+    }  
+    .section{
+        padding-bottom: 30px;
+    } 
+}

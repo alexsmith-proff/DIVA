@@ -2,6 +2,8 @@ import React from 'react'
 import { TypeTransaction } from '../../interfaces/enums';
 import { IFlat } from '../../interfaces/flats';
 import Card from '../Card/Card';
+import AreaIco from '../../public/img/area-ico.png'
+import FloorIco from '../../public/img/floor-ico.png'
 
 import 'react-alice-carousel/lib/alice-carousel.css';
 
@@ -21,7 +23,13 @@ const SaleCardsList: React.FC<SaleCardsListProps> = ({ flats }) => {
                         <ul className={s.listItems}>
                             <li className={s.item}>
                                 <div className={s.itemIco}>
-                                    <Image src="/img/area-ico.png" alt="area-ico" width="20" height="20" />
+                                    <Image
+                                        alt="area-ico"
+                                        src={AreaIco}
+                                        width="20"
+                                        height="20"
+                                        placeholder="blur"
+                                    />
                                 </div>
                                 <div className={s.itemText}>
                                     {item.area} m<span>2</span>
@@ -29,7 +37,13 @@ const SaleCardsList: React.FC<SaleCardsListProps> = ({ flats }) => {
                             </li>
                             <li className={s.item}>
                                 <div className={s.itemIco}>
-                                    <Image src="/img/floor-ico.png" alt="floor-ico" width="20" height="20" />
+                                    <Image
+                                        alt="floor-ico"
+                                        src={FloorIco}
+                                        width="20"
+                                        height="20"
+                                        placeholder="blur"
+                                    />
                                 </div>
                                 <div className={s.itemText}>
                                     {item.curentFloor}/{item.maxFloor} эт

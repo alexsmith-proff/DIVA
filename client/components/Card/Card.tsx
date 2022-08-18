@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React, { useEffect } from 'react'
 import { TypeTransaction } from '../../interfaces/enums'
 import ImagesViewer from '../ImagesViewer/ImagesViewer'
+import RubleImg from '../../public/img/ruble.png'
 
 import s from './Card.module.scss'
 
@@ -32,9 +33,14 @@ const Card: React.FC<CardProps> = ({ children, transactionType, rooms, address, 
                         <>
                             <span className={s.price}>{price}</span>
                             <div className={s.rubleIco}>
-                                <Image src="/img/ruble.png" alt="ruble-ico" width="20" height="20" />
+                                <Image
+                                alt="ruble-ico"
+                                src={RubleImg}
+                                width="20"
+                                height="20"
+                                placeholder="blur"
+                            />
                             </div>
-
                         </>
                     }
                     {
@@ -64,7 +70,14 @@ const Card: React.FC<CardProps> = ({ children, transactionType, rooms, address, 
                                             <>
                                                 <span className={s.price}>{price}</span>
                                                 <div className={s.rubleIco}>
-                                                    <Image className={s.rubleIco} src="/img/ruble.png" alt="ruble-ico" width="20" height="20" />
+                                                    <Image
+                                                        className={s.rubleIco}
+                                                        alt="ruble-ico"
+                                                        src={RubleImg}
+                                                        width="20"
+                                                        height="20"
+                                                        placeholder="blur"
+                                                    />
                                                 </div>
 
                                             </>

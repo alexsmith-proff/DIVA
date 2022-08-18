@@ -1,15 +1,19 @@
 .section {
     background: url("/img/title_bg.png") no-repeat;
     background-size: cover;
-    // background-position: 0 -140px;
+
+    // background-color: rgb(231, 161, 31);
+    // background-size: 100% 100%;
+    // background-size: contain;
+    // background-position: 100% 100%;
     // background-position-x: center;
     // background-position-y: -140px;
     // height: 2079px;
-    padding-top: 20px;
+
     // background-attachment:fixed;
+    padding-top: 20px;
     // padding-bottom: 100px;
 }
-
 .nav {
     background: url("/img/nav_bg.png") no-repeat;
     background-size: cover;
@@ -76,20 +80,20 @@
     padding-top: 65px;
     margin-bottom: 220px;
 }
-@media screen and (min-width: 2210px) {
-    .section {
-        background-size: cover;
-        background-position: 0 0px;
-        height: 1179px;
-    }    
-}
-@media screen and (min-width: 1900px) {
-    .section {
-        background-size: cover;
-        background-position: 0 -220px;
-        height: 980px;
-    }    
-}
+// @media screen and (min-width: 2210px) {
+//     .section {
+//         background-size: cover;
+//         background-position: 0 0px;
+//         height: 1179px;
+//     }    
+// }
+// @media screen and (min-width: 1900px) {
+//     .section {
+//         background-size: cover;
+//         background-position: 0 -220px;
+//         height: 980px;
+//     }    
+// }
 @media screen and (max-width: 1200px) {
     .titleText{
         font-size: 44px;
