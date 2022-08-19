@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import validator from 'validator';
 import Link from 'next/link';
 import { TypePopup } from '../../interfaces/enums';
@@ -20,7 +20,17 @@ const FeedBackPopup: React.FC<FeedBackPopupProps> = ({ active, typePopup, setAct
     const [nameAlert, setNameAlert] = useState<boolean>(false)
     const [telNumberAlert, setTelNumberAlert] = useState<boolean>(false)
 
+    const [isChecked, setIsChecked] = useState<boolean>(true)
+
     const inputRef = useRef<HTMLInputElement>(null)
+
+    // const CheckBoxChange = useCallback(() => {
+    //     setIsChecked(!isChecked)
+    // }, [])
+
+    const CheckBoxChange = () => {
+        setIsChecked(!isChecked)
+    }
 
     useEffect(() => {
         if (active) {
@@ -42,38 +52,41 @@ const FeedBackPopup: React.FC<FeedBackPopupProps> = ({ active, typePopup, setAct
         inputRef.current.selectionEnd = 4
     }
 
-    const Send = async() => {
-        // Валидация полей ввода
-        // Убираем '(', ')', '-' и пробелы. (+7 (963) 111-96-12 приводим к +79631119612)
-        const telNumberProcessed = telNumber.replace(/[\(\)\-\s]/g, '')
+    const Send = async () => {
+        if (isChecked) {
+            // Валидация полей ввода
+            // Убираем '(', ')', '-' и пробелы. (+7 (963) 111-96-12 приводим к +79631119612)
+            const telNumberProcessed = telNumber.replace(/[\(\)\-\s]/g, '')
 
-        // Проверяем на пустоту имя
-        if (name == '') {
-            setNameAlert(true)
-        }else {
-            setNameAlert(false)
-        }
-        if (validator.isMobilePhone(telNumberProcessed, 'any') && (telNumberProcessed != '+79999999999')) {
-            setTelNumberAlert(false)
-        }else{
-            setTelNumberAlert(true)
-        }
-        // Проверяем Российский номер и номер не +79999999999
-        if ((validator.isMobilePhone(telNumberProcessed, 'any')) && (telNumberProcessed != '+79999999999')&&(name != '')) {
-            // Отпрака данных на сервер
-            await allEndPoints.auth.sendNameAndPhoneNumberToMail({
-                name: name,
-                phone: telNumber
-            })
+            // Проверяем на пустоту имя
+            if (name == '') {
+                setNameAlert(true)
+            } else {
+                setNameAlert(false)
+            }
+            if (validator.isMobilePhone(telNumberProcessed, 'any') && (telNumberProcessed != '+79999999999')) {
+                setTelNumberAlert(false)
+            } else {
+                setTelNumberAlert(true)
+            }
+            // Проверяем Российский номер и номер не +79999999999
+            if ((validator.isMobilePhone(telNumberProcessed, 'any')) && (telNumberProcessed != '+79999999999') && (name != '')) {
+                // Отпрака данных на сервер
+                await allEndPoints.auth.sendNameAndPhoneNumberToMail({
+                    name: name,
+                    phone: telNumber
+                })
+                setActive(false)
 
-            // Очистка полей ввода
-            setName('')
-            setTelNumber('+7 (999) 999-99-99')
-            setActive(false)
-
+                // Очистка полей ввода
+                setName('')
+                setTelNumber('+7 (999) 999-99-99')
+            }
         }
 
     }
+    console.log('feedback');
+
 
     return (
         <>
@@ -93,9 +106,13 @@ const FeedBackPopup: React.FC<FeedBackPopupProps> = ({ active, typePopup, setAct
                                         <div className={telNumberAlert ? (s.inputWrap + ' ' + s.alertTelNum) : s.inputWrap}>
                                             <InputName className={s.contentInput} mask="+7 (999) 999-99-99" onChange={ChangeTelNumber} value={telNumber} onMouseDown={ClickInputName} onClick={ClickInputName} ref={inputRef} />
                                         </div>
-                                        <Link href="/privacy">
-                                            <a className={s.privacy}>Политика конфиденциальности</a>
-                                        </Link>
+                                        <div className={s.privacy}>
+                                            <input type="checkbox" checked={isChecked} onChange={CheckBoxChange} />
+                                            <Link href="/privacy">
+                                                <a className={s.privacyText}>Согласие на обработку персональных данных</a>
+                                            </Link>
+                                        </div>
+
                                     </div>
                                 </>
                             }
